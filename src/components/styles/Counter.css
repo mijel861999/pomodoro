@@ -1,0 +1,32 @@
+.counter-section{
+    background-color: #012326;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter{
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: #D9A84E;
+    height: 250px;
+    width: 500px;
+    margin: 50px 50px 50px 50px;
+    border-radius: 20px;
+}
+
+.counter h1{
+    font-size: 150px;
+}
+
+.buttons-container{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 50px;
+    margin-top: 0px;
+}

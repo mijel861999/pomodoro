@@ -1,0 +1,51 @@
+nav{
+    height: 110px;
+    background: #D9A84E;
+}
+
+nav .row{
+    height: 100%;;
+}
+
+section.Logo__section{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+}
+
+.Logo__section p{
+    font-weight: bold;
+}
+
+.Logo__container{
+    height: 100%;
+}
+
+
+.Logo__container img{
+    height: 52px;
+}
+
+
+.Navigation__section{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Media queries*/
+@media screen and (max-width : 768px){
+    .Navigation__section{
+        padding: 20px 20px;
+        display: flex !important;
+        justify-content: center !important;
+        background-color:#012326;
+    }
+
+}
+
+@media screen and (max-width : 540px){
+
+}

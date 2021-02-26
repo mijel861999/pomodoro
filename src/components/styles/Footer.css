@@ -1,0 +1,80 @@
+footer{
+    background: #D9A84E;
+    color: black;
+    height: 270px;
+    display: flex !important;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+}
+
+footer h1{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+footer p{
+    text-align: center;
+}
+
+.help-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.help-section .yape-image-container{
+    padding: 10px 40px;
+    padding-bottom: 40px;
+}
+
+.help-section .yape-image-container img{
+    height: 100px;
+}
+
+.phrase-section{
+    background-color: #012326;
+    height: 50px;
+    color: #D9A84E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phrase-section h3{
+    font-size: 20px;
+}
+
+@media screen and (max-width : 1140px){
+    footer h1{
+        font-size: 28px;
+        padding: 2px 2px;
+    }
+
+    footer p{
+        font-size: 15px;
+        padding: 2px 2px;
+    }
+
+    .help-section .yape-image-container{
+        padding: 10px 25px;
+        padding-bottom: 40px;
+    }
+
+}
+
+@media screen and (max-width : 720px){
+    footer h1{
+        font-size: 25px;
+    }
+
+    .help-section .yape-image-container{
+        padding: 10px 20px;
+        padding-bottom: 40px;
+    }
+
+    .help-section .yape-image-container img{
+        height: 80px;
+    }
+}
