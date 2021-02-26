@@ -7,16 +7,21 @@
 }
 
 .counter{
-    font-size: 50px;
+    font-size: 43px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: #012326;
     background-color: #D9A84E;
     height: 250px;
     width: 500px;
     margin: 50px 50px 50px 50px;
     border-radius: 20px;
+    transition: background 0.2s linear;
+}
+
+.counter.dark{
+    background: #A66038;
 }
 
 .counter h1{
@@ -29,4 +34,73 @@
     justify-content: space-between;
     margin: 50px 50px;
     margin-top: 0px;
+}
+
+.button-pomodoro{
+    width: 45% !important; 
+    height: 49px !important;
+    font-size: 27px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px !important;
+}
+
+
+@media screen and (max-width : 768px){
+    .counter{
+        font-size: 35px;
+        height: 210px;
+        width: 420px;
+        margin-top: 100px;
+    }
+
+    .buttons-container{
+        width: 420px;
+    }
+
+}
+
+@media screen and (max-width : 500px){
+    .counter{
+        height: 185px;
+        width: 370px;
+        margin-top: 100px;
+    }
+
+    .counter h1{
+        font-size: 100px;
+    }
+
+    .buttons-container{
+        width: 370px;
+    }
+
+    .button-pomodoro{
+        font-size: 20px !important;
+        height: 40px;
+    }
+
+}
+
+@media screen and (max-width : 400px){
+    .counter{
+        height: 150px;
+        width: 300px;
+        margin-top: 100px;
+    }
+
+    .counter h1{
+        font-size: 80px;
+    }
+
+    .buttons-container{
+        width: 300px;
+    }
+
+    .button-pomodoro{
+        font-size: 15px !important;
+        height: 37px !important;
+    }
+
 }

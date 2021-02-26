@@ -38,7 +38,24 @@ export const LinkText = styled.a`
     color: black;
     padding: 3px 25px;
     border: 2px solid ${props => props.card ? "#A66038" : 'black'};
-    background: ${props => props.primary ? '#D9A84E' : 'black'}; 
+    /* background: ${props => props.primary ? '#D9A84E' : 'black'};  */
+    
+    ${props=>{
+        if(props.primary){
+            return `
+                background: #D9A84E;
+            `
+        }else if(props.orange){
+            return`
+                background: #A66038;
+            `
+        }else{
+            return`
+                background: black;
+            `
+        }
+    }}
+    
     border-radius: 6px;
     cursor: pointer;
 

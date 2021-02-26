@@ -24,6 +24,7 @@ class Counter extends React.Component{
         this.buttonStart=React.createRef();
         this.buttonPause=React.createRef();
         this.buttonAgain=React.createRef();
+        this.counter=React.createRef();
 
         this.startTimer = this.startTimer.bind(this);
         this.countDown = this.countDown.bind(this);
@@ -115,19 +116,20 @@ class Counter extends React.Component{
     changueButton(){
         const buttonPause =this.buttonPause.current;
         const buttonStart =this.buttonStart.current;
-        
+        const counter = this.counter.current;
 
         if(this.state.on==true){
-            buttonStart.style.display="block";
+            buttonStart.style.display="flex";
             buttonPause.style.display="none";
+            counter.classList.remove("dark");
         }else{
             buttonStart.style.display="none";
-            buttonPause.style.display="block";
+            buttonPause.style.display="flex";
+            counter.classList.add("dark");
         }
     }
     
     again(){
-        
         let timeLeftVar=this.secondsToTime(this.state.seconds);
         
         this.setState({
@@ -144,27 +146,26 @@ class Counter extends React.Component{
         return(
             <React.Fragment>
                 <section className="counter-section">
-                    <section className="counter">
+                    <section ref={this.counter} className="counter">
                         <h1>{this.state.time.m}:{this.state.time.s}</h1>
                     </section>
                     <section className="buttons-container">
-                        <LinkText ref={this.buttonStart} onClick={()=>{
+                        <LinkText className="button-pomodoro" ref={this.buttonStart} onClick={()=>{
                             this.startTimer();
                         }} primary>
                             Empezar
                         </LinkText>
-                        <LinkText ref={this.buttonPause} onClick={()=>{
+                        <LinkText className="button-pomodoro" ref={this.buttonPause} onClick={()=>{
                             this.pauseTimer();
                             this.changueButton();
                         }} primary>
                             Pausa
                         </LinkText>
-                        <LinkText ref={this.buttonAgain} onClick={this.again} primary>
+                        <LinkText className="button-pomodoro" ref={this.buttonAgain} onClick={this.again} orange>
                             De nuevo
                         </LinkText>
                     </section>
                 </section>
-
             </React.Fragment>
         );
     }
