@@ -15,7 +15,7 @@ class Counter extends React.Component{
                 m : 0,
                 s : 0,
             },
-            seconds: 13,
+            seconds: 1500,
             on: false
         };
 
@@ -23,12 +23,14 @@ class Counter extends React.Component{
         
         this.buttonStart=React.createRef();
         this.buttonPause=React.createRef();
+        this.buttonAgain=React.createRef();
 
         this.startTimer = this.startTimer.bind(this);
         this.countDown = this.countDown.bind(this);
         this.pauseTimer = this.pauseTimer.bind(this);
         this.setCeroTimer = this.setCeroTimer.bind(this);
         this.changueButton =this.changueButton.bind(this);
+        this.again = this.again.bind(this);
     }
 
     secondsToTime(secs){
@@ -51,35 +53,39 @@ class Counter extends React.Component{
 
 
     componentDidMount(){
-        let timeLeftVar=this.secondsToTime(this.state.seconds);
+        // let timeLeftVar=this.secondsToTime(this.state.seconds);
         
-        this.setState({
-            time:timeLeftVar
-        });
+        // this.setState({
+        //     time:timeLeftVar
+        // });
+        this.again();
 
         const buttonPause =this.buttonPause.current;
 
         buttonPause.style.display="none";
     }
 
+
+
     startTimer(){
         if(this.timer == 0 && this.state.seconds > 0){
+            
             this.setState({
                 on:true
             })
-            // this.changueButton();
+            
+            this.changueButton();
             this.timer = setInterval(this.countDown, 1000);
         }
     }
 
     countDown(){
         let auxSeconds = this.state.seconds - 1;
-
         this.setState({
             time: this.secondsToTime(auxSeconds),
             seconds: auxSeconds
         });
-
+        
         if(this.state.seconds == 0){
             clearInterval(this.timer);
             alert("Acaba de terminar");
@@ -110,15 +116,28 @@ class Counter extends React.Component{
         const buttonPause =this.buttonPause.current;
         const buttonStart =this.buttonStart.current;
         
-        // buttonStart.style.background="red";
-        // buttonPause.style.background="red";
+
         if(this.state.on==true){
-            buttonStart.style.display="none";
-            buttonPause.style.display="block";
-        }else{
             buttonStart.style.display="block";
             buttonPause.style.display="none";
+        }else{
+            buttonStart.style.display="none";
+            buttonPause.style.display="block";
         }
+    }
+    
+    again(){
+        
+        let timeLeftVar=this.secondsToTime(this.state.seconds);
+        
+        this.setState({
+            time:{
+                m: 25,
+                s: 0
+            },
+            seconds: 1500
+        });  
+        console.log("HOla")
     }
 
     render(){
@@ -131,22 +150,18 @@ class Counter extends React.Component{
                     <section className="buttons-container">
                         <LinkText ref={this.buttonStart} onClick={()=>{
                             this.startTimer();
-                            // this.changueButton();
-                            
-                            setTimeout(this.changueButton(), 1000);
                         }} primary>
                             Empezar
                         </LinkText>
                         <LinkText ref={this.buttonPause} onClick={()=>{
                             this.pauseTimer();
-                            // this.changueButton();
-                            setTimeout(this.changueButton(), 1000);
+                            this.changueButton();
                         }} primary>
                             Pausa
                         </LinkText>
-                        {/* <LinkText onClick={this.setCeroTimer} primary>
-                            Terminar
-                        </LinkText> */}
+                        <LinkText ref={this.buttonAgain} onClick={this.again} primary>
+                            De nuevo
+                        </LinkText>
                     </section>
                 </section>
 
