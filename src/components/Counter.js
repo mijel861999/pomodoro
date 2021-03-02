@@ -7,6 +7,9 @@ import { LinkText } from './StyledComponents';
 //CSS
 import './styles/Counter.css';
 
+//others
+// import {alarm} from '../others/s.wav';
+
 class Counter extends React.Component{
     constructor(props){
         super(props);
@@ -20,7 +23,9 @@ class Counter extends React.Component{
         };
 
         this.timer = 0;
-        
+        this.sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/animals/duck1.wav");
+
+
         this.buttonStart=React.createRef();
         this.buttonPause=React.createRef();
         this.buttonAgain=React.createRef();
@@ -88,8 +93,10 @@ class Counter extends React.Component{
         });
         
         if(this.state.seconds == 0){
+            this.sound.play();
             clearInterval(this.timer);
             alert("Acaba de terminar");
+            // this.sound.pause();
             this.changueButton();
         }
     }
@@ -139,7 +146,7 @@ class Counter extends React.Component{
             },
             seconds: 1500
         });  
-        console.log("HOla")
+        this.timer = 0;
     }
 
     render(){
@@ -166,6 +173,7 @@ class Counter extends React.Component{
                         </LinkText>
                     </section>
                 </section>
+                <source src="../others/s.wav" type="audio/wav"/>
             </React.Fragment>
         );
     }

@@ -4,6 +4,7 @@ import { BrowserRouter , Route, Switch } from 'react-router-dom';
 
 //Pages 
 import Pomodoro from './pages/Pomodoro';
+import Login from'./pages/Login';
 
 // Components
 import Navbar from './components/Navbar';
@@ -17,6 +18,7 @@ function App() {
     <BrowserRouter>
       <Navbar/>
         <Switch>
+          <Route exact path="/login" component={Login}/>
           <Route exact path="/" component={Pomodoro}/>
         </Switch>
       <Footer/>
