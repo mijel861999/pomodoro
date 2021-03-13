@@ -7,6 +7,9 @@ import { LinkText } from './StyledComponents';
 //CSS
 import './styles/Counter.css';
 
+//Redux
+import { connect } from 'react-redux';
+
 //others
 // import {alarm} from '../others/s.wav';
 
@@ -179,4 +182,12 @@ class Counter extends React.Component{
     }
 }
 
-export default Counter;
+const mapStateToProps = state => {
+    // Solamente estados que yo necesito
+    return { 
+        seconds: state.seconds,
+    };
+};
+// export default Counter;
+
+export default connect(mapStateToProps, null)(Counter);

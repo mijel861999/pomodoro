@@ -6,7 +6,7 @@ import { loginRequest} from '../actions';
 // CSS
 import './css/Login.css';
 
-const Login = props => {
+const Register = props => {
 
     const [credentials, setCredentials] = useState({
         email: '',
@@ -54,7 +54,7 @@ const Login = props => {
         <React.Fragment>
             <section className="login-container">
                 <form className="" action="">
-                    <h1>Bienvenido!</h1>
+                    <h1>Registrate!</h1>
                     <br/>
                     <label htmlFor="">
                         Username:
@@ -93,7 +93,7 @@ const mapDispatchToProps = {
     loginRequest,
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Register);
 
 
 // ||

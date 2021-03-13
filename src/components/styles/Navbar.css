@@ -35,6 +35,30 @@ section.Logo__section{
     justify-content: flex-end;
 }
 
+.perfil-image-container{
+    background-color: #012326;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    margin: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil-image-container img{
+    height: 30px;
+    width: 30px;    
+    border-radius: 50px;
+}
+
+.perfil-image-container p{
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+
 /* Media queries*/
 @media screen and (max-width : 768px){
     .Navigation__section{
