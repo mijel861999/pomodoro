@@ -2,10 +2,18 @@
 header{
     font-size: 1.5rem;
     background-color: #012326;
+    display: flex !important;
+    text-align: center;
+    justify-content: center;
+}
+
+header h1{
+    text-align: center;
+    color: #D9A84E;
 }
 
 header, form{
-    min-height: 20vh;
+    min-height: 18vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,6 +22,9 @@ header, form{
 
 .form-container{
     background-color: #012326 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 form input, form button{
@@ -23,15 +34,15 @@ form input, form button{
     background: white;
 }
 
-form button{
-    color: #d88771;
-    background: white;
+form .todo-button{
+    color: #012326;
+    background: #D9A84E;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 form button:hover{
-    background-color: #d88771;
+    background-color: #A66038;
     color: white;
 }
 

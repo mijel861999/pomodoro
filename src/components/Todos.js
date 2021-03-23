@@ -45,7 +45,8 @@ const Todos = ( props ) => {
                     onClick={addTodo} 
                     className="todo-button" 
                     type="submit">
-                    <i className="fas fa-plus-square"></i>
+                        +
+                    {/* <i className="fas fa-plus-square"></i> */}
                 </button>
                 <div className="select">
                     <select name="todos" className="filter-todo">

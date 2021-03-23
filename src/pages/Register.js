@@ -10,6 +10,7 @@ const Register = props => {
 
     const [credentials, setCredentials] = useState({
         email: '',
+        name: '',
         password: ''
     })
 
@@ -57,13 +58,23 @@ const Register = props => {
                     <h1>Registrate!</h1>
                     <br/>
                     <label htmlFor="">
-                        Username:
+                        Email:
                         <input 
                             type="text"
                             name="email"
                             placeholder="user@direction.com"
                             value={credentials.email}
                             onChange={inputChanged}
+                        />
+                    </label>
+                    <label>
+                        Name:
+                        <input 
+                        type="text"
+                        name="name"
+                        placeholder="example"
+                        value={credentials.name}
+                        onChange={inputChanged}
                         />
                     </label>
                     <br/>
